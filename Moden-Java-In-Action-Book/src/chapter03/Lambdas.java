@@ -2,6 +2,7 @@ package chapter03;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -24,9 +25,15 @@ public class Lambdas {
     System.out.println(greenApples);
 
     Comparator<Apple> c = (Apple a1, Apple a2) -> a1.getWeight() - a2.getWeight();
+    
 
     // [Apple{color=GREEN, weight=80}, Apple{color=RED, weight=120}, Apple{color=GREEN, weight=155}]
     inventory.sort(c);
+    // or (Manik)
+    Collections.sort(inventory, c);
+    // or (Manik)
+    Collections.sort(inventory, (Apple a1, Apple a2) -> a1.getWeight() - a2.getWeight());
+    
     System.out.println(inventory);
   }
 
