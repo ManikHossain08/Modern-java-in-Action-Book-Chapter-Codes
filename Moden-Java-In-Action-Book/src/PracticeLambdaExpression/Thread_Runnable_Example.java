@@ -1,6 +1,6 @@
 package PracticeLambdaExpression;
 
-public class RunnableExample {
+public class Thread_Runnable_Example {
 
 	public static void main(String[] args) {
 		Thread myThread = new Thread( new Runnable() {

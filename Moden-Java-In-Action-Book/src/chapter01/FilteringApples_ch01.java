@@ -11,8 +11,10 @@ public class FilteringApples_ch01 {
 		List<Apple> inventory = Arrays.asList(new Apple(80, "green"), new Apple(155, "green"), new Apple(120, "red"));
 		//inventory.add(new Apple(60, "brown"));
 		
-		// [Apple{color='green', weight=80}, Apple{color='green', weight=155}]
-		List<Apple> greenApples = filterApples(inventory, FilteringApples_ch01::isGreenApple);
+		FilteringApples_ch01 instancemethod = new FilteringApples_ch01();
+		
+		// method reference using through instance object as isGreenApple is not an static (non-static) method 
+		List<Apple> greenApples = filterApples(inventory, instancemethod::isGreenApple);
 		System.out.println(greenApples);
 
 		// [Apple{color='green', weight=155}]
@@ -52,8 +54,9 @@ public class FilteringApples_ch01 {
 		}
 		return result;
 	}
-
-	public static boolean isGreenApple(Apple apple) {
+	
+	// without static keyword it is called instance method and we need to call that method by the object of that class
+	public boolean isGreenApple(Apple apple) {
 		return "green".equals(apple.getColor());
 	}
 

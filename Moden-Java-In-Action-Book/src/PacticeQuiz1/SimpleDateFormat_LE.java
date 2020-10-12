@@ -1,5 +1,6 @@
 package PacticeQuiz1;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.function.Function;
@@ -34,6 +35,22 @@ public class SimpleDateFormat_LE {
 	    // this solution used different class and static method which return string date from separate java file.
 	    iDateFormatter idate2 = (Date d) ->  MyDateFormatter_DO_NOT_FOLLOW.format(d);
 	    getDate(new Date(), idate2);
+	    
+	    // SOLUTION # 05 USING LAMBDA BODY (A BLOCK OF STATEMENT)
+	    iDateFormatter lambdaBody = (Date d) -> {
+	    	String p = "dd-MMMM-yyyy";
+	    	SimpleDateFormat sdf = new SimpleDateFormat(p);
+		    return sdf.format(d);
+	    };
+	    
+	    Date bDay = null;
+	    try {
+			 bDay = new SimpleDateFormat("dd-MM-yyyy").parse("10-01-1989");
+		} catch (ParseException e) {
+
+			e.printStackTrace();
+		}  
+	    System.out.print("From Lambda body Date: "+lambdaBody.getStringDate(bDay));
 	    
 	    
 	    // *** SOLUTION 3 & 4 ARE MORE ACCURATE ONE ***
