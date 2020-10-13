@@ -9,6 +9,11 @@ public class Apple {
 		this.weight = weight;
 		this.color = color;
 	}
+	
+	public Apple() {
+		this.weight = 100;
+		this.color = "RED";
+	}
 
 	public int getWeight() {
 		return weight;
