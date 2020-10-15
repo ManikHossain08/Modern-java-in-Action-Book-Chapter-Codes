@@ -11,6 +11,23 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+/*
+ * Important Links:
+ * 		// https://javarevisited.blogspot.com/2014/02/10-example-of-lambda-expressions-in-java8.html
+ * 		// https://objectcomputing.com/resources/publications/sett/february-2013-java-8-project-lambda
+ * 		// http://tutorials.jenkov.com/java/lambda-expressions.html
+ * 		// https://www.geeksforgeeks.org/lambda-expressions-java-8/
+ * 		// https://www.baeldung.com/java-8-lambda-expressions-tips
+ * 		// https://www.javacodegeeks.com/2016/01/java-8-lambda-expression-design-patterns-strategy-design-pattern.html
+ * 		// https://www.programiz.com/java-programming/lambda-expression
+ * 		// 
+ * 
+ */
+
+
+
+
+
 import chapter01.Apple;
 
 /*
