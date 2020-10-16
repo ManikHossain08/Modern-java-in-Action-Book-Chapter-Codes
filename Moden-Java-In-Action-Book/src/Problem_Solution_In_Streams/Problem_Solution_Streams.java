@@ -21,6 +21,9 @@ import java.util.Set;
 	6 Print all transactions’ values from the traders living in Cambridge.
 	7 What’s the highest value of all the transactions?
 	8 Find the transaction with the smallest value.
+	9 For each trader, return the number of lowercase letters in the name (hint: look at the chars method on String).
+	10 Find the city String with the largest number of lowercase letters from all the cities in the transaction list.\n 
+	   Experiment with returning an Optional<String> to account for the case of an empty input list.
  */
 
 public class Problem_Solution_Streams {
@@ -140,6 +143,32 @@ public class Problem_Solution_Streams {
 										  .min(comparing(Transaction::getValue));
 										  
 		System.out.println( findMinTrans1);
+		
+		
+		System.out.println("\n9. For each trader, return the number of lowercase letters in the name (hint: look at the chars method on String).: ");
+		List<Integer> leterCount  = transactions.stream()
+									  .map(name -> name.getTrader().getName().substring(1))
+									  .map(a -> a.length())
+									  .collect(toList());
+		leterCount.forEach(System.out::println);
+		
+		
+		System.out.println("\n10 Find the city String with the largest number of lowercase letters from all the cities in the transaction list.\\n \n" + 
+				"	   Experiment with returning an Optional<String> to account for the case of an empty input list.: ");
+		int maxLengthCity  = transactions.stream()
+									  .map(Transaction::getTrader)
+									  .map(city -> city.getCity().substring(1))
+									  .mapToInt(a -> a.length())
+									  .max().getAsInt();
+		
+		Optional<String> citymaxLower = transactions.stream()
+										.map(Transaction::getTrader)
+										.filter(city -> city.getCity().substring(1).length() == maxLengthCity)
+										.map(city -> city.getCity())
+										.findFirst();
+		System.out.println(citymaxLower.get());
+		
+		
 		
 	}
 }
