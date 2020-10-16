@@ -62,7 +62,7 @@ import LactureSlides_CollectionsToStreams.Dish.Type;
  * 
  */
 
-public class Streams_slides09 {
+public class Lecture_slides09___ {
 	public static void main(String[] args) {
 		List<Dish> menu = Dish.menu;
 		

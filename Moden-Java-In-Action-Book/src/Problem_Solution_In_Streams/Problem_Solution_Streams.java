@@ -169,6 +169,14 @@ public class Problem_Solution_Streams {
 		System.out.println(citymaxLower.get());
 		
 		
+		// Filter list of transactions by amount and group by currency
+		
+//		Map<Currency, List<Transaction>> transactionsByCurrencies =
+//		transactions.stream()
+//		.filter((Transaction t) -> t.getPrice() > 1000)
+//		.collect(groupingBy(Transaction::getCurrency));
+		
+		
 		
 	}
 }

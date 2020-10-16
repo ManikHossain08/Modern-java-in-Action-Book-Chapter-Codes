@@ -36,7 +36,7 @@ import java.util.stream.Stream;
 		• An infinite stream is a stream that has no fixed size
  */
 
-public class WorkingWithStream_Slides10 {
+public class Lecture_Slides10_STREAMS {
 	
 	 private static String MacOSXPathToReadFile = "/Users/info.txt";
 	

@@ -14,6 +14,11 @@ public class Apple {
 		this.weight = 100;
 		this.color = "RED";
 	}
+	
+	public Apple(int w) {
+		this.weight = w;
+		this.color = "RED";
+	}
 
 	public int getWeight() {
 		return weight;
@@ -34,6 +39,10 @@ public class Apple {
 	@Override
 	public String toString() {
 		return String.format("Apple{color='%s', weight=%d}", color, weight);
+	}
+	
+	public static boolean isGreen(Apple a) {
+		return a.getColor().contentEquals("GREEN");
 	}
 
 }

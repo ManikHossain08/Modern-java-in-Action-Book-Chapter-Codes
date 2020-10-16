@@ -6,13 +6,10 @@ import java.io.IOException;
 
 public class ComputesLineNumberFromFile {
 
-	// private static final String FILE =
-	// ComputesLineNumberFromFile.class.getResource("./data.txt").getFile();
 	private static final String FILE = "/Users/info.txt";
 
 	public static void main(String[] args) throws IOException {
 
-		
 		// SOLUTION #01
 		try {
 			String numOfLines = processFile((BufferedReader b) -> b.lines().count() + "");
@@ -23,19 +20,19 @@ public class ComputesLineNumberFromFile {
 
 		// SOLUTION #02
 		BufferedReader inputFile = new BufferedReader(new FileReader(FILE));
-		String numOfLine = processFileTwo(inputFile, (BufferedReader b) -> b.lines().count() + "");
+		String numOfLine = processFile_Two(inputFile, (BufferedReader b) -> b.lines().count() + "");
 		System.out.println(numOfLine);
 		
 
 	}
-	// usage
+	// Usage for SOLUTION #01
 	public static String processFile(iFileReaderInterface p) throws IOException {
 		try (BufferedReader br = new BufferedReader(new FileReader(FILE))) {
 			return p.readLinesFromFile(br);
 		}
 	}
-
-	public static String processFileTwo(BufferedReader inputFile, iFileReaderInterface code) throws IOException {
+	// Usage for SOLUTION #02
+	public static String processFile_Two(BufferedReader inputFile, iFileReaderInterface code) throws IOException {
 		return code.readLinesFromFile(inputFile);
 	}
 }

@@ -12,11 +12,11 @@ public class Client {
 
 		// Type-1
 		Context c = new Context(new OperationAdd());
-		System.out.println("10 + 5 = " + c.executeStrategy(10, 5));
+		System.out.println("10 + 5 = " + c.executeStrategy(10, 5)); // dynamic binding using context class
 		
 		// Type-2
 		OperationMultiply addition = new OperationMultiply();
-		System.out.println("10 + 5 = " + addition.doOperation(10, 5));
+		System.out.println("10 + 5 = " + addition.doOperation(10, 5)); // static binding without context class
 		
 	}
 

@@ -3,6 +3,7 @@ package chapter02;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import static java.util.Comparator.comparing;
 
 public class FilteringApples_ch02 {
 
@@ -13,6 +14,11 @@ public class FilteringApples_ch02 {
 	public static void main(String... args) {
 		List<Apple> inventory = Arrays.asList(new Apple(80, Color.GREEN), new Apple(155, Color.GREEN),
 				new Apple(120, Color.RED));
+		
+		
+		inventory.sort(comparing(Apple::getWeight).reversed());
+		inventory.forEach(System.out::println);
+		System.out.println();
 
 		// [Apple{color=GREEN, weight=80}, Apple{color=GREEN, weight=155}]
 		List<Apple> greenApples = filterApplesByColor(inventory, Color.GREEN);
